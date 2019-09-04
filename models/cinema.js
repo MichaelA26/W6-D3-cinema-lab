@@ -17,11 +17,23 @@ Cinema.prototype.findFilmByTitle = function(title){
   return filmByTitle[0]
 }
 
-Cinema.prototype.findFilmByGenre = function(genre){
+Cinema.prototype.findFilmsByGenre = function(genre){
   const filmByGenre = this.films.filter(film => {
     return film.genre === genre
   })
-  return filmByGenre[0]
+  return filmByGenre
 }
+
+Cinema.prototype.findFilmByYear = function(year){
+  const filmByYear = this.films.filter(film => {
+    return film.year === year
+  })
+  if (filmByYear === year){
+    return true
+  } else {
+    return false
+  }
+}
+
 
 module.exports = Cinema;
